@@ -72,7 +72,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Content: "Welcome to Quito418's Blog"
 
   socialIcons:
     #- name: twitter
