@@ -1,0 +1,7 @@
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "public"]
+	path = public
+	url = http://github.com/quito418/quito418.github.io.git
+	branch = main
