@@ -10,9 +10,6 @@ buildExpired: false
 
 googleAnalytics: UA-123-45
 
-- name: GitHub Pages action
-  uses: peaceiris/actions-gh-pages@v3.7.3
-
 minify:
   disableXML: true
   minifyOutput: true
