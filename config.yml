@@ -16,7 +16,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Quito418 PR
+  title: Quito418 Blog
   description: "Quito418 PR Blog"
   #  keywords: [Blog, Portfolio, PaperMod]
   keywords: [Blog, Portfolio]
@@ -43,10 +43,10 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / https://github.com/quito418/quito418/person.png>"
-    favicon16x16: "<link / https://github.com/quito418/quito418/person.png>"
-    favicon32x32: "<link / https://github.com/quito418/quito418/person.png>"
-    apple_touch_icon: "https://github.com/quito418/quito418/person.png"
+    favicon: "https://github.com/quito418/quito418/raw/master/person.png"
+    favicon16x16: "https://github.com/quito418/quito418/raw/master/person.png"
+    favicon32x32: "https://github.com/quito418/quito418/raw/master/person.png"
+    apple_touch_icon: "https://github.com/quito418/quito418/raw/master/person.png"
     #safari_pinned_tab: "<link / abs url>"
 
   label:
