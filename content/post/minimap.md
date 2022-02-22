@@ -80,3 +80,4 @@ Given a query q.
 2. Sort minimizers
 3. Do Chaining (find seeds that are colinear), Seed extension (Needleman–Wunsch algorithm, Global alignment).
 
+Chaining and Seed extension will be covered in other Paper Reading post.
