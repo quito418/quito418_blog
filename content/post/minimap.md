@@ -25,7 +25,7 @@ Software that maps long reads to the reference genome.
 - how minimizer works
 -  -->
 
-### A-1. MinimizerSketch(s, w, k)
+### A-1. MinimizerSketch(s, w, k): How minimizer is obtained
 ![Algorithm 1](/assets/data/minimap/A-1.JPG)
 <!-- ### Case for  -->
 > minimizer is the smallest K-mer hash value within window size w.
@@ -51,7 +51,7 @@ for i to |s| - w - k + 1 do
     u, v = hash( )
 ``` -->
 
-### A-2. InvertibleHash(x, p)
+### A-2. InvertibleHash(x, p): Hash function used for K-mer
 > Reference: https://naml.us/post/inverse-of-a-hash-function/
 > 
 > Thomas Wang’s integer hash functions
@@ -61,7 +61,7 @@ for i to |s| - w - k + 1 do
 - Key properties include avalanche (changing any input bit changes about half of the output bits) and invertibility.
 <!-- - poly-A which might have been 0 with naive encoding, results in non-zero hash value. -->
 
-### A-3. Index(T, w, k)
+### A-3. Index(T, w, k): Indexing the reference genome
 Given a multiple strings T.
 1. For each reference string t in T, collect the minimizers (A-1).
 2. Sort the minimizers and store it in buckets (index). The bucket uses b bit for hash value instead of 2k bit.
@@ -73,10 +73,10 @@ Given a multiple strings T.
 4. The actual position can be obtained by lookup in 1) bucket hash table and 2) minimizer-position array.
 
 
-### A-4. Map(H, q, w, k, e)
+### A-4. Map(H, q, w, k, e): Mapping query to the reference genome.
 
-Given a query q.
-1. Get minimizers of query q
+Given a query q. Follow the seed-and-extend paradigm.
+1. Get minimizers of query q. (minimizers are seeds)
 2. Sort minimizers
 3. Do Chaining (find seeds that are colinear), Seed extension (Needleman–Wunsch algorithm, Global alignment).
 
