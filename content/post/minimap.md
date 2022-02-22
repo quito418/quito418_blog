@@ -1,6 +1,6 @@
 ---
 title: "How minimizer is used for seeding in Minimap2"
-date: 2022-02-18T06:22:18Z
+date: 2022-02-18
 draft: false
 categories: ["Alignment"]
 tags: ["Longread","Alignment","NGS", "minimap", "minimizer", "seeding"]
@@ -10,7 +10,7 @@ comments: false
 Summary: "Understanding the seeding algorithm of Minimap."
 Description: "Understanding the seeding algorithm, minimizer of Minimap. Chaining and seed extension are excluded"
 ---
-### Paper: Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences
+### Paper: [Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences](https://academic.oup.com/bioinformatics/article/32/14/2103/1742895)
 ### Summary
 Software that maps long reads to the reference genome.
 > Minimap adopts the
