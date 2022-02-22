@@ -34,7 +34,7 @@ Software that maps long reads to the reference genome.
 For each character in input string s
 1. Calculates the hash value of both K-mer and reverse-complement K-mer. Choose the one with the smaller hash value.
    - Strand number is stored along with the K-mer hash value, therefore, if strand is ambiguous (ambiguous when hash values of s and RC of s are identical), the K-mer hash value is discarded.
-   - Minimizer is compared with the minimum K-mer hash value between the one from the original strand and the one from the RC strand. Using two K-mer hash values, enables to align reads to the reference regardless of the strand the reads align to. Also, read orientation can be concluded.
+   - Minimizer is compared with the minimum K-mer hash value between the one from the original strand and the one from the RC strand. Using two K-mer hash values, reads are aligned to the reference regardless of the strand the reads align to. Also, read orientation can be concluded from the minimizer.
 2. All calculated K-mer hash value is appended to circular queue.
    - Minimap2 uses a circular queue (variable buf in minimap2/sketch.c) to track the minimum K-mer hash value.
    - (position in input string s, reference_id, strand number (0 or 1)) are also stored in the queue along with the hash value.
