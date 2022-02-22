@@ -3,12 +3,12 @@ title: "Minimap and miniasm: fast mapping and de novo assembly for noisy long se
 date: 2022-02-18T06:22:18Z
 draft: false
 categories: ["Alignment"]
-tags: ["Longread","Alignment","NGS", "minimap", "minimizer"]
+tags: ["Longread","Alignment","NGS", "minimap", "minimizer", "seeding"]
 author: "Me"
 hidemeta: false
 comments: false
-Summary: "Understanding the algorithm of Minimap."
-Description: "Understanding the algorithm of Minimap. I don't describe the algorithm of Miniasm here."
+Summary: "Understanding the seeding algorithm of Minimap."
+Description: "Understanding the seeding algorithm, minimizer of Minimap. I don't describe the algorithm of Miniasm here."
 ---
 
 ## Summary
