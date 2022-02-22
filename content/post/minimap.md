@@ -10,10 +10,8 @@ comments: false
 Summary: "Understanding the seeding algorithm of Minimap."
 Description: "Understanding the seeding algorithm, minimizer of Minimap. Chaining and seed extension are excluded"
 ---
-
-## Summary
-Paper: Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences
-
+### Paper: Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences
+### Summary
 Software that maps long reads to the reference genome.
 > Minimap adopts the
 > idea of sketch like MHAP but takes minimizers as a reduced representation instead; it
@@ -21,7 +19,7 @@ Software that maps long reads to the reference genome.
 > sorting extensively like DALIGNER. In addition, minimap is designed
 > not only as a read overlapper but also as a read-to-genome
 > and genome-to-genome mapper.
-## Algorithms explained (Minimap2 Seeding and Indexing)
+## Algorithms explained (Seeding and Indexing)
 
 <!-- ### List of concepts to know
 - how minimizer works
