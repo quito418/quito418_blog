@@ -31,7 +31,7 @@ Software that maps long reads to the reference genome.
 > minimizer is the smallest K-mer hash value within window size w.
 > finding minimizer is 
 
-### For each character in input string s
+For each character in input string s
 1. Calculates the hash value of both K-mer and reverse-complement K-mer. Choose the one with the smaller hash value.
    - Strand number is stored along with the K-mer hash value, therefore, if strand is ambiguous (ambiguous when hash values of s and RC of s are identical), the K-mer hash value is discarded.
    - Minimizer is compared with the minimum K-mer hash value between the one from the original strand and the one from the RC strand. This enables to align reads to the reference regardless of the strand the read aligns to.
