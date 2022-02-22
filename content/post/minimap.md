@@ -1,5 +1,5 @@
 ---
-title: "Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences"
+title: "How minimizer is used for seeding in Minimap2"
 date: 2022-02-18T06:22:18Z
 draft: false
 categories: ["Alignment"]
@@ -8,10 +8,12 @@ author: "Me"
 hidemeta: false
 comments: false
 Summary: "Understanding the seeding algorithm of Minimap."
-Description: "Understanding the seeding algorithm, minimizer of Minimap. I don't describe the algorithm of Miniasm here."
+Description: "Understanding the seeding algorithm, minimizer of Minimap. Chaining and seed extension are excluded"
 ---
 
 ## Summary
+Paper: Minimap and miniasm: fast mapping and de novo assembly for noisy long sequences
+
 Software that maps long reads to the reference genome.
 > Minimap adopts the
 > idea of sketch like MHAP but takes minimizers as a reduced representation instead; it
