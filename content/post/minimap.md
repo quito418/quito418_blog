@@ -19,7 +19,7 @@ Software that maps long reads to the reference genome.
 > sorting extensively like DALIGNER. In addition, minimap is designed
 > not only as a read overlapper but also as a read-to-genome
 > and genome-to-genome mapper.
-## Algorithms explained 
+## Algorithms explained (Minimap2 Seeding and Indexing)
 
 <!-- ### List of concepts to know
 - how minimizer works
