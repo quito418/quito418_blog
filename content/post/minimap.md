@@ -29,7 +29,7 @@ Software that maps long reads to the reference genome.
 ![Algorithm 1](/assets/data/minimap/A-1.JPG)
 <!-- ### Case for  -->
 > minimizer is the smallest K-mer hash value within window size w.
-> finding minimizer is 
+> Single K-mer (minimizer) is a representative of w+k-1 length string, also a seed.
 
 For each character in input string s
 1. Calculates the hash value of both K-mer and reverse-complement K-mer. Choose the one with the smaller hash value.
