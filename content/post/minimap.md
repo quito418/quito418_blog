@@ -64,12 +64,13 @@ for i to |s| - w - k + 1 do
 ### A-3. Index(T, w, k): Indexing the reference genome
 Given a multiple strings T.
 1. For each reference string t in T, collect the minimizers (A-1).
-2. Sort the minimizers and store it in buckets (index). The bucket uses b bit for hash value instead of 2k bit.
+2. Sort the minimizer array.
    - Sorted with the (1: minimizer, 2:position) (K-mer hash value of minimizers).
    - Values are the reference index, position in the reference, strand, number of minimizers.
    - Using a bucket reduces the memory size and increases the cache hit ratio.
-3. The bucket stores the interval of minimizers' position.
-   - In particular, bucket stores the start position and the number of minimzers in the corresponding bucket.
+3.  Minimizers' positions (pos in mininimizer array) are stored in buckets (hash table index). 
+   - The bucket uses b bit for hash value instead of 2K bit minimizer. 
+   - The bucket stores the start position and number of minimizers.
 4. The actual position can be obtained by lookup in 1) bucket hash table and 2) minimizer-position array.
 
 
