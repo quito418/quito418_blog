@@ -8,7 +8,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-googleAnalytics: G-YN2EJ0TS6X
+googleAnalytics: G-1MPDM9QL84
 
 minify:
   disableXML: true
@@ -85,7 +85,7 @@ params:
 
   analytics:
     google:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "quitoblog"
     #bing:
     #  SiteVerificationTag: "XYZabc"
     #yandex:
