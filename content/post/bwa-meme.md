@@ -5,8 +5,6 @@ draft: False
 categories: ["Alignment", "Machine learning"]
 tags: ["NGS", "ShortRead", "Alignment", "BWA-MEME", "BWA-MEM2", "BWA", "Machine learning", "learned-index"]
 author: "Me"
-hidemeta: false
-comments: false
 Summary: "Paper summary of BWA-MEME."
 Description: "Paper summary of BWA-MEME."
 ---
@@ -18,7 +16,7 @@ Emulates BWA MEM algorithm with a novel contraction-based approach.
 Uses learned-index to optimize the longest-common-prefix (LCP) search between query and suffix array (reference genome).
 
 
-### Contraction-based approach.
+### BWA-MEME uses Contraction-based approach.
 Existing works FM-index and ERT index uses a elongation-based approach for exact match search.
 Those methods elongates the exact match between query and reference genome, which requires random memory access during index lookup.
 BWA-MEME takes a contraction-based approach:
