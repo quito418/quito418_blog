@@ -12,8 +12,9 @@ Description: "Paper summary of BWA-MEME."
 ### Paper: [BWA-MEME: BWA-MEM emulated with a machine learning approach](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac137/6543607)
 
 ### Summary
-Emulates BWA MEM algorithm with a novel contraction-based approach.
-Uses learned-index to optimize the longest-common-prefix (LCP) search between query and suffix array (reference genome).
+BWA-MEM, a widely used alignment tool, typically encounters bottlenecks in the seeding phase of its seed-and-extend alignment paradigm.
+The paper propose BWA-MEME that emulates BWA MEM algorithm with a novel contraction-based approach in seeding.
+This approach uses learned-index to enhance the longest-common-prefix (LCP) search efficiency between the query sequence and the suffix array, which represents the reference genome.
 
 
 ### BWA-MEME uses Contraction-based approach.
@@ -27,16 +28,17 @@ BWA-MEME takes a contraction-based approach:
 
 
 ### Better memory efficiency with contraction-based approach
-Fewer random memory access in index lookup
-- Predicting the position of LCP is done using learned-index with one or two random memory access
-
-Memory access pattern becomes predictable
-- Binary search is performed from the predicted position. 
-- Seed is searched near the longest common prefix (using linear or exponential search)
+- The LCP's position is efficiently predicted using a learned-index, typically requiring only one or two instances of random memory access.
+- The memory access pattern becomes more predictable, with a binary search initiated from the predicted position and seeds searched near the LCP, either through linear or exponential methods.
 
 Putting together, contraction-based approach opens up various ways of improving memory-efficiency of exact match search in BWA-MEME (including data-locality in index and memory prefetching)
 
 ### Components of BWA-MEME for further improvment in memory-efficiency
-- Optimizing RMI structure for reference genome
-- Better data-locality: Suffix characters integrated into suffix array
-- Re-use exact match search results
+- Optimization of the RMI (Recursive Model Index) structure tailored for the reference genome.
+- Improved data locality, achieved by integrating suffix characters directly into the suffix array.
+- Efficient reuse of exact match search results, reducing redundant computations.
+
+### Runtime index building
+When disk I/O is limited, loading large index into memory can take significant time.
+To address this issue, BWA-MEME implemented an runtime index building that only loads suffix array and builds the other indices at start-up.
+The speed are equivalent to disk read of speed 3-5 GB per second. 
