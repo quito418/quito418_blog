@@ -23,9 +23,16 @@ Those methods elongates the exact match between query and reference genome, whic
 BWA-MEME takes a contraction-based approach:
 1. Finds LCP between query and suffix array using learned-index.
     Predicting the position of LCP is done using learned-index.
-    Binary search is performed from the predicted position to find LCP.
-2. Finds seeds (seed and extension) nearby the LCP. (the positions of seeds in suffix array always includes LCP)
+    Binary search is performed from the predicted position to find LCP. The region for binary search is determined by the max error is provided from the learned-index model (which is pre-calculated at the training stage).
+2. Finds seeds nearby the LCP. (the positions of seeds in suffix array always includes LCP)
 
+Seed is SMEM which is defined by:
+- exact match between query and reference genome that cannot be extended in either direction without mismatch
+- the number of exact matches to the reference genome should be larger than the given input threshold N.
+
+FM-index or ERT keeps track of the number of exact match while elogating the exact match.
+However, BWA-MEME first finds the longest exact match and finds a shorter exact match that adhere to the definition of seeds.
+BWA-MEME performs seeding in zig-zag which is similar to the proposed approach in ERT, however, BWA-MEME shows the left-extension points (LEP) used in ERT are not required [[ref]](https://www.biorxiv.org/content/10.1101/2020.03.23.003897v1.full.pdf). 
 
 ### Better memory efficiency with contraction-based approach
 - The LCP's position is efficiently predicted using a learned-index, typically requiring only one or two instances of random memory access.
@@ -35,7 +42,7 @@ Putting together, contraction-based approach opens up various ways of improving 
 
 ### Components of BWA-MEME for further improvment in memory-efficiency
 - Optimization of the RMI (Recursive Model Index) structure tailored for the reference genome.
-- Improved data locality, achieved by integrating suffix characters directly into the suffix array.
+- Improved data locality, achieved by integrating suffix characters directly next to suffix array position values.
 - Efficient reuse of exact match search results, reducing redundant computations.
 
 ### Runtime index building
